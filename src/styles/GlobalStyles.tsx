@@ -28,7 +28,7 @@ export function GlobalStyle() {
         }
 
         body::-webkit-scrollbar-thumb {
-          background-color: #ffffff;
+          background-color: #cbcbcb;
           border-radius: 10px;
           height: 56px;
           background-clip: content-box;
