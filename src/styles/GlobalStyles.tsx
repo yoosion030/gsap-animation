@@ -20,7 +20,7 @@ export function GlobalStyle() {
 
         a {
           text-decoration: none;
-          color: #ffffff;
+          color: inherit;
         }
 
         body {
