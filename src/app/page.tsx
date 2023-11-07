@@ -113,7 +113,7 @@ export default function Home() {
     gsap.to(".slide", {
       scrollTrigger: {
         scrub: true,
-        markers: true,
+        // markers: true,
         start: "top top",
         end: "7000px",
       },
