@@ -115,7 +115,7 @@ export default function Home() {
         scrub: true,
         // markers: true,
         start: "top top",
-        end: "7000px",
+        end: "9000px",
       },
       onComplete: () => {
         gsap.to(".background, .img", { opacity: 0 });
