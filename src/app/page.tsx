@@ -18,7 +18,6 @@ export default function Home() {
     myAnimation(".box1", {
       scrollTrigger: {
         trigger: ".box1",
-        // markers: true,
         start: "bottom center",
         scrub: true,
       },
@@ -28,7 +27,6 @@ export default function Home() {
     myAnimation(".box2", {
       scrollTrigger: {
         trigger: ".box2",
-        // markers: true,
         start: "center center",
         scrub: true,
       },
@@ -51,7 +49,6 @@ export default function Home() {
     myAnimation(".img1", {
       scrollTrigger: {
         trigger: ".img1",
-        // markers: true,
         start: "top bottom",
         scrub: true,
       },
@@ -61,7 +58,6 @@ export default function Home() {
     myAnimation(".img2", {
       scrollTrigger: {
         trigger: ".img2",
-        // markers: true,
         start: "top bottom",
         scrub: true,
       },
@@ -71,7 +67,6 @@ export default function Home() {
     myAnimation(".img3", {
       scrollTrigger: {
         trigger: ".img3",
-        // markers: true,
         start: "top bottom",
         scrub: true,
       },
@@ -82,7 +77,6 @@ export default function Home() {
     myAnimation(".img4", {
       scrollTrigger: {
         trigger: ".img4",
-        // markers: true,
         start: "top bottom",
         scrub: true,
       },
@@ -93,7 +87,6 @@ export default function Home() {
     myAnimation(".img5", {
       scrollTrigger: {
         trigger: ".img5",
-        // markers: true,
         start: "top bottom",
         scrub: true,
       },
@@ -103,7 +96,6 @@ export default function Home() {
     myAnimation(".img6", {
       scrollTrigger: {
         trigger: ".img6",
-        // markers: true,
         start: "top bottom",
         scrub: true,
       },
@@ -114,7 +106,6 @@ export default function Home() {
     myAnimation(".img7", {
       scrollTrigger: {
         trigger: ".img7",
-        // markers: true,
         start: "top bottom",
         scrub: true,
       },
@@ -125,7 +116,6 @@ export default function Home() {
     myAnimation(".box4", {
       scrollTrigger: {
         trigger: ".box4",
-        // markers: true,
         start: "center center",
         scrub: true,
       },
@@ -136,7 +126,6 @@ export default function Home() {
     myAnimation(".bigimg", {
       scrollTrigger: {
         trigger: ".bigimg",
-        // markers: true,
         start: "center center",
         scrub: true,
       },
@@ -149,7 +138,6 @@ export default function Home() {
       scrollTrigger: {
         trigger: ".title",
         start: "center center",
-        // markers: true,
         scrub: true,
       },
       duration: 5,
@@ -160,7 +148,6 @@ export default function Home() {
     myAnimation(".box5", {
       scrollTrigger: {
         trigger: ".box5",
-        markers: true,
         start: "center center",
         scrub: true,
       },
@@ -172,11 +159,34 @@ export default function Home() {
       scrollTrigger: {
         trigger: ".line",
         start: "top center",
-        markers: true,
         scrub: true,
       },
       duration: 5,
       width: "100vw",
+    });
+
+    myAnimation(".box6", {
+      scrollTrigger: {
+        trigger: ".box6",
+
+        start: "top center",
+        scrub: true,
+      },
+
+      position: "sticky",
+    });
+
+    myAnimation(".background", {
+      scrollTrigger: {
+        trigger: ".background",
+        start: "top center",
+
+        scrub: true,
+      },
+      position: "sticky",
+      duration: 1,
+      width: "100vw",
+      height: "100vh",
     });
   }, []);
 
@@ -208,8 +218,8 @@ export default function Home() {
       </Section5>
       <Section2></Section2>
 
-      <Section6>
-        <img src="/나이키배경.png" alt="" width="1000" />
+      <Section6 className="box6">
+        <img src="/나이키배경.webp" alt="" className="background" />
       </Section6>
     </MainSection>
   );
@@ -330,8 +340,18 @@ const Section4 = styled.section`
 
 const Section6 = styled.section`
   position: relative;
-  height: 400vh;
+  height: 160vh;
   width: 100vw;
   background-color: black;
   z-index: 100;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+
+  img {
+    position: relative;
+    height: 700px;
+    top: 0;
+  }
 `;
