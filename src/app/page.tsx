@@ -5,30 +5,27 @@ import styled from "@emotion/styled";
 import { gsap } from "gsap";
 import { useEffect } from "react";
 
+interface TitleTrigger {
+  id: number;
+  transform: string;
+  color: string;
+  duration: number;
+}
+
 export default function Home() {
+  const titleTrigger: TitleTrigger[] = [
+    { id: 1, transform: "translateX(500px)", color: "#00A1EF", duration: 1.3 },
+    { id: 2, transform: "translateX(750px)", color: "#F9C0C1", duration: 1.5 },
+    { id: 3, transform: "translateX(1000px)", color: "#8BF461", duration: 1.7 },
+    { id: 4, transform: "translateX(1250px)", color: "#FFD76A", duration: 1.9 },
+  ];
   useEffect(() => {
-    gsap.to(".title1", {
-      transform: "translateX(500px)",
-      duration: 1.3,
-      color: "#00A1EF",
-    });
-
-    gsap.to(".title2", {
-      transform: "translateX(750px)",
-      duration: 1.5,
-      color: "#F9C0C1",
-    });
-
-    gsap.to(".title3", {
-      transform: "translateX(1000px)",
-      duration: 1.7,
-      color: "#8BF461",
-    });
-
-    gsap.to(".title4", {
-      transform: "translateX(1250px)",
-      duration: 1.9,
-      color: "#FFD76A",
+    titleTrigger.forEach(({ transform, id, duration, color }) => {
+      gsap.to(`.title${id}`, {
+        transform,
+        duration,
+        color,
+      });
     });
 
     scrollTrigger(".box1", {
@@ -113,7 +110,7 @@ export default function Home() {
       xPercent: -20,
     });
 
-    gsap.to(".test", {
+    gsap.to(".slide", {
       scrollTrigger: {
         scrub: true,
         markers: true,
@@ -146,11 +143,11 @@ export default function Home() {
             <video src="/video/asap1.mp4" autoPlay muted loop />
           </VideoWrapper>
           <VideoWrapper>
-            <img src="/asap2.jpg" />
+            <img src="/asap2.jpg" alt="" />
           </VideoWrapper>
 
           <VideoWrapper>
-            <img src="/asap1.png" />
+            <img src="/asap1.png" alt="" />
           </VideoWrapper>
           <VideoWrapper>
             <video src="/video/asap2.mp4" autoPlay muted loop />
@@ -158,18 +155,18 @@ export default function Home() {
         </VideoSection>
       </Section2>
       <Section3 className="box3">
-        <img src="/asap배경.png" className="background" />
+        <img src="/asap배경.png" alt="" className="background" />
       </Section3>
       <Section1 />
-
+      <Section1 />
       <Section1 />
       <Section4 className="box4">
-        <img src="/asap배경2.jpg" className="img background2" />
-        <img src="/asap배경3.png" className="img background3" />
+        <img src="/asap배경2.jpg" alt="" className="img background2" />
+        <img src="/asap배경3.png" alt="" className="img background3" />
       </Section4>
       <Section1 />
 
-      <SlideSection className="test" />
+      <SlideSection className="slide" />
       <Section1 />
       <Section1 />
       <Section1 />
