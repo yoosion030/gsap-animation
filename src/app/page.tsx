@@ -46,16 +46,15 @@ export default function Home() {
         start: "top top",
         end: "bottom bottom",
         scrub: true,
-        markers: true,
+        // markers: true,
       },
 
-      duration: 2,
       onComplete: () => {
-        gsap.to(".box3", { opacity: 1, duration: 0 });
+        gsap.to(".box3", { opacity: 1 });
       },
 
       onUpdate: () => {
-        gsap.to(".box3", { opacity: 0, duration: 0 });
+        gsap.to(".box3", { opacity: 0 });
       },
     });
 
@@ -63,28 +62,69 @@ export default function Home() {
       scrollTrigger: {
         scrub: true,
         start: "2800px",
-        end: "4444px",
-        markers: true,
+        end: "6444px",
+        // markers: true,
       },
 
       transform: "scale(0.2)",
       borderRadius: "150px",
+
+      onComplete: () => {
+        gsap.to(".box4", { opacity: 1 });
+      },
+
+      onUpdate: () => {
+        gsap.to(".box4", { opacity: 0 });
+      },
     });
 
     scrollTrigger(".box4", {
       _scrollTrigger: {
         scrub: true,
         start: "center center",
-        markers: true,
+        // markers: true,
       },
       position: "sticky",
 
       onComplete: () => {
-        gsap.to(".img", { opacity: 1, duration: 1 });
+        gsap.to(".img", { opacity: 1 });
       },
 
       onUpdate: () => {
-        gsap.to(".img", { opacity: 0, duration: 0 });
+        gsap.to(".img", { opacity: 0 });
+      },
+    });
+
+    scrollTrigger(".background2", {
+      _scrollTrigger: {
+        scrub: true,
+        start: "center center",
+        // markers: true,
+      },
+      xPercent: 20,
+    });
+
+    scrollTrigger(".background3", {
+      _scrollTrigger: {
+        scrub: true,
+        // markers: true,
+        start: "center center",
+      },
+      xPercent: -20,
+    });
+
+    gsap.to(".test", {
+      scrollTrigger: {
+        scrub: true,
+        markers: true,
+        start: "top top",
+        end: "7000px",
+      },
+      onComplete: () => {
+        gsap.to(".background, .img", { opacity: 0 });
+      },
+      onUpdate: () => {
+        gsap.to(".background, .img", { opacity: 1 });
       },
     });
   }, []);
@@ -106,13 +146,14 @@ export default function Home() {
             <video src="/video/asap1.mp4" autoPlay muted loop />
           </VideoWrapper>
           <VideoWrapper>
-            <video src="/video/asap2.mp4" autoPlay muted loop />
+            <img src="/asap2.jpg" />
           </VideoWrapper>
+
           <VideoWrapper>
             <img src="/asap1.png" />
           </VideoWrapper>
           <VideoWrapper>
-            <img src="/asap2.jpg" />
+            <video src="/video/asap2.mp4" autoPlay muted loop />
           </VideoWrapper>
         </VideoSection>
       </Section2>
@@ -123,14 +164,24 @@ export default function Home() {
 
       <Section1 />
       <Section4 className="box4">
-        <img src="/asap2.jpg" className="img" />
-        <img src="/asap2.jpg" className="img" />
+        <img src="/asap배경2.jpg" className="img background2" />
+        <img src="/asap배경3.png" className="img background3" />
       </Section4>
+      <Section1 />
+
+      <SlideSection className="test" />
+      <Section1 />
       <Section1 />
       <Section1 />
     </MainSection>
   );
 }
+
+const SlideSection = styled.section`
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+`;
 
 const MainSection = styled.main`
   position: relative;
@@ -147,7 +198,6 @@ const Section4 = styled.section`
   color: white;
   overflow: hidden;
 
-  /* background-color: yellow; */
   top: 0;
 
   img {
@@ -168,14 +218,14 @@ const Section1 = styled.section`
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  font-size: 250px;
-  font-weight: bold;
-  color: white;
-  overflow: hidden;
 
+  overflow: hidden;
   top: 0;
 
   p {
+    color: white;
+    font-size: 250px;
+    font-weight: bold;
     transform: translateX(3000px);
     -webkit-text-stroke: 1px black;
   }
