@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import { useEffect, useRef } from "react";
 
-export const myAnimation = (comp: string, test: gsap.TweenVars) => {
+const myAnimation = (comp: string, test: gsap.TweenVars) => {
   gsap.registerPlugin(ScrollTrigger);
 
   gsap.timeline({ defaults: { duration: 2, ease: "none" } });
