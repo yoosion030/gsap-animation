@@ -121,6 +121,63 @@ export default function Home() {
       xPercent: -10,
       transform: "rotate(100deg)",
     });
+
+    myAnimation(".box4", {
+      scrollTrigger: {
+        trigger: ".box4",
+        // markers: true,
+        start: "center center",
+        scrub: true,
+      },
+
+      position: "sticky",
+    });
+
+    myAnimation(".bigimg", {
+      scrollTrigger: {
+        trigger: ".bigimg",
+        // markers: true,
+        start: "center center",
+        scrub: true,
+      },
+      duration: 5,
+      opacity: 1,
+      xPercent: -150,
+    });
+
+    myAnimation(".title", {
+      scrollTrigger: {
+        trigger: ".title",
+        start: "center center",
+        // markers: true,
+        scrub: true,
+      },
+      duration: 5,
+      transform: "translate(200px, 0)",
+      opacity: 1,
+    });
+
+    myAnimation(".box5", {
+      scrollTrigger: {
+        trigger: ".box5",
+        markers: true,
+        start: "center center",
+        scrub: true,
+      },
+
+      position: "sticky",
+    });
+
+    myAnimation(".line", {
+      scrollTrigger: {
+        trigger: ".line",
+        start: "top center",
+        markers: true,
+        scrub: true,
+      },
+      duration: 5,
+      width: "100vw",
+    });
   }, []);
 
   const textRef = useRef<any>();
@@ -141,6 +198,19 @@ export default function Home() {
         <img src="/나이키6.png" alt="" className="img6" width="1000" />
         <img src="/나이키7.png" alt="" className="img7" width="1000" />
       </Section3>
+      <Section4 className="box4">
+        <img src="/나이키빅로고.png" alt="" className="bigimg" width="1000" />
+        <h2 className="title">누구보다 빠르게.</h2>
+      </Section4>
+
+      <Section5 className="box5">
+        <Line className="line" />
+      </Section5>
+      <Section2></Section2>
+
+      <Section6>
+        <img src="/나이키배경.png" alt="" width="1000" />
+      </Section6>
     </MainSection>
   );
 }
@@ -161,6 +231,18 @@ const Section = styled.section`
   overflow-x: hidden;
 `;
 
+const Section5 = styled(Section)`
+  height: 120vh;
+`;
+
+const Line = styled.hr`
+  position: relative;
+  width: 0px;
+  background-color: #000000;
+  margin: 0;
+  top: 0px;
+`;
+
 const Section1 = styled(Section)``;
 
 const Section2 = styled(Section)`
@@ -171,12 +253,13 @@ const Section3 = styled.section`
   position: relative;
   width: 100vw;
   background-color: #ffffff;
-  overflow-x: hidden;
-  height: 300vh;
+  overflow: hidden;
+  height: 130vh;
 
   img {
     position: absolute;
   }
+
   .img1 {
     top: 300px;
     left: 500px;
@@ -217,4 +300,38 @@ const Section3 = styled.section`
     top: 600px;
     left: 800px;
   }
+`;
+
+const Section4 = styled.section`
+  position: relative;
+  background-color: #ffffff;
+  text-align: center;
+  top: 0;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 150px;
+  font-weight: 900;
+
+  .bigimg {
+    width: 400px;
+    opacity: 0.8;
+  }
+
+  .title {
+    position: absolute;
+    transform: translate(0px, 100px);
+    opacity: 0;
+  }
+`;
+
+const Section6 = styled.section`
+  position: relative;
+  height: 400vh;
+  width: 100vw;
+  background-color: black;
+  z-index: 100;
 `;

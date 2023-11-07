@@ -19,7 +19,7 @@ const HeaderStyle = styled.header`
   padding: 0 70px;
   justify-content: space-between;
   position: fixed;
-  z-index: 100;
+  z-index: 50;
   background-color: #ffffff;
 `;
 
