@@ -136,7 +136,7 @@ export default function Home() {
       <Section3 className="box3">
         {imageTrigger.map(({ id }) => (
           <img
-            src={`/나이키${id}.png`}
+            src={`/nike/나이키${id}.png`}
             className={`img${id}`}
             width="1000"
             key={id}
@@ -145,7 +145,12 @@ export default function Home() {
         ))}
       </Section3>
       <Section4 className="box4">
-        <img src="/나이키빅로고.png" alt="" className="bigimg" width="1000" />
+        <img
+          src="/nike/나이키빅로고.png"
+          alt=""
+          className="bigimg"
+          width="1000"
+        />
         <h2 className="title">누구보다 빠르게.</h2>
       </Section4>
 
@@ -155,7 +160,7 @@ export default function Home() {
       <Section2></Section2>
 
       <Section6 className="box6">
-        <img src="/나이키배경.webp" alt="" className="background" />
+        <img src="/nike/나이키배경.webp" alt="" className="background" />
       </Section6>
     </MainSection>
   );

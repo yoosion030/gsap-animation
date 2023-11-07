@@ -143,11 +143,11 @@ export default function Home() {
             <video src="/video/asap1.mp4" autoPlay muted loop />
           </VideoWrapper>
           <VideoWrapper>
-            <img src="/asap2.jpg" alt="" />
+            <img src="/asap/asap2.jpg" alt="" />
           </VideoWrapper>
 
           <VideoWrapper>
-            <img src="/asap1.png" alt="" />
+            <img src="/asap/asap1.png" alt="" />
           </VideoWrapper>
           <VideoWrapper>
             <video src="/video/asap2.mp4" autoPlay muted loop />
@@ -155,14 +155,14 @@ export default function Home() {
         </VideoSection>
       </Section2>
       <Section3 className="box3">
-        <img src="/asap배경.png" alt="" className="background" />
+        <img src="/asap/asap배경1.png" alt="" className="background" />
       </Section3>
       <Section1 />
       <Section1 />
       <Section1 />
       <Section4 className="box4">
-        <img src="/asap배경2.jpg" alt="" className="img background2" />
-        <img src="/asap배경3.png" alt="" className="img background3" />
+        <img src="/asap/asap배경2.jpg" alt="" className="img background2" />
+        <img src="/asap/asap배경3.png" alt="" className="img background3" />
       </Section4>
       <Section1 />
 
