@@ -22,18 +22,6 @@ export default function Home() {
     { id: 7, xPercent: -10, transform: "rotate(100deg)" },
   ];
   useEffect(() => {
-    imageTrigger.forEach(({ id, xPercent, transform }) => {
-      scrollTrigger(`.img${id}`, {
-        scrollTrigger: {
-          trigger: `.img${id}`,
-          start: "top bottom",
-          scrub: true,
-        },
-        xPercent,
-        transform,
-      });
-    });
-
     const stickyTrigger = (
       targets: string,
       start: string,
@@ -72,9 +60,20 @@ export default function Home() {
         }
       },
     });
+
+    imageTrigger.forEach(({ id, xPercent, transform }) => {
+      scrollTrigger(`.img${id}`, {
+        scrollTrigger: {
+          trigger: `.img${id}`,
+          start: "top bottom",
+          scrub: true,
+        },
+        xPercent,
+        transform,
+      });
+    });
+
     stickyTrigger(".box4", "center center");
-    stickyTrigger(".box5", "center center");
-    stickyTrigger(".box6", "top center");
 
     scrollTrigger(".bigimg", {
       scrollTrigger: {
@@ -84,7 +83,7 @@ export default function Home() {
       },
       duration: 5,
       opacity: 1,
-      xPercent: -150,
+      xPercent: -130,
     });
 
     scrollTrigger(".title", {
@@ -94,7 +93,7 @@ export default function Home() {
         scrub: true,
       },
       duration: 5,
-      transform: "translate(200px, 0)",
+      transform: "translate(260px, 0)",
       opacity: 1,
     });
 
@@ -105,8 +104,11 @@ export default function Home() {
         scrub: true,
       },
       duration: 5,
-      width: "100vw",
+      width: "80vw",
     });
+
+    stickyTrigger(".box5", "center center");
+    stickyTrigger(".box6", "top center");
 
     scrollTrigger(".background", {
       scrollTrigger: {
@@ -141,13 +143,6 @@ export default function Home() {
             alt={`나이키${id}`}
           />
         ))}
-        {/* <img src="/나이키.png" alt="" className="img1" width="1000" />
-        <img src="/나이키2.png" alt="" className="img2" width="1000" />
-        <img src="/나이키3.png" alt="" className="img3" width="1000" />
-        <img src="/나이키4.png" alt="" className="img4" width="1000" />
-        <img src="/나이키5.png" alt="" className="img5" width="1000" />
-        <img src="/나이키6.png" alt="" className="img6" width="1000" />
-        <img src="/나이키7.png" alt="" className="img7" width="1000" /> */}
       </Section3>
       <Section4 className="box4">
         <img src="/나이키빅로고.png" alt="" className="bigimg" width="1000" />
