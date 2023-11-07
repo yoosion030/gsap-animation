@@ -23,19 +23,12 @@ export function GlobalStyle() {
           color: #ffffff;
         }
 
-        body::-webkit-scrollbar {
-          width: 16px;
+        body {
+          -ms-overflow-style: none;
         }
 
-        body::-webkit-scrollbar-thumb {
-          background-color: #cbcbcb;
-          border-radius: 10px;
-          height: 56px;
-          background-clip: content-box;
-        }
-
-        body::-webkit-scrollbar-thumb:hover {
-          background-color: #cbcbcb;
+        ::-webkit-scrollbar {
+          display: none;
         }
 
         *,
